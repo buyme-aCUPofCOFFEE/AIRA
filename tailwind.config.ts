@@ -63,14 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom pastel colors for the portfolio
+				// Updated green/mint palette
 				pastel: {
-					lavender: '#B19CD9',
-					mint: '#B8E6B8',
-					coral: '#FFB5BA',
-					sky: '#87CEEB',
-					peach: '#FFCBA4',
-					rose: '#F8BBD9'
+					lavender: '#7DD3FC', // Light blue-green
+					mint: '#10B981', // Primary mint green
+					coral: '#059669', // Darker green
+					sky: '#6EE7B7', // Light mint
+					peach: '#34D399', // Medium mint
+					rose: '#A7F3D0' // Very light mint
 				}
 			},
 			borderRadius: {
@@ -100,8 +100,8 @@ export default {
 					'50%': { transform: 'translateY(-20px)' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: '0 0 20px rgba(177, 156, 217, 0.3)' },
-					'50%': { boxShadow: '0 0 30px rgba(177, 156, 217, 0.6)' }
+					'0%, 100%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)' },
+					'50%': { boxShadow: '0 0 30px rgba(16, 185, 129, 0.6)' }
 				},
 				'slide-up': {
 					'0%': { transform: 'translateY(100px)', opacity: '0' },

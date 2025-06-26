@@ -41,7 +41,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-pastel-lavender transition-colors duration-300 font-medium"
+                  className="text-muted-foreground hover:text-emerald-400 transition-colors duration-300 font-medium"
                 >
                   {item.name}
                 </a>
@@ -53,7 +53,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-muted-foreground hover:text-pastel-lavender transition-colors duration-300"
+              className="text-muted-foreground hover:text-emerald-400 transition-colors duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -69,7 +69,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-muted-foreground hover:text-pastel-lavender transition-colors duration-300"
+                className="block px-3 py-2 text-muted-foreground hover:text-emerald-400 transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

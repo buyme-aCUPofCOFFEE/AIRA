@@ -11,8 +11,8 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-background">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-pastel-lavender/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pastel-mint/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -20,7 +20,7 @@ const Hero = () => {
           {/* Left side - Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <p className="text-pastel-mint text-lg font-medium">Hi There!</p>
+              <p className="text-emerald-400 text-lg font-medium">Hi There!</p>
               <h1 className="text-6xl md:text-8xl font-bold font-poppins">
                 <span className="block text-foreground">I am</span>
                 <span className="block text-gradient">Developer</span>
@@ -32,7 +32,7 @@ const Hero = () => {
 
             <button
               onClick={scrollToAbout}
-              className="px-8 py-4 bg-pastel-mint text-background font-semibold rounded hover:bg-pastel-mint/90 transition-all duration-300"
+              className="px-8 py-4 bg-emerald-500 text-white font-semibold rounded hover:bg-emerald-600 transition-all duration-300"
             >
               Contact Me
             </button>
@@ -67,8 +67,8 @@ const Hero = () => {
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-pastel-mint/20 rounded-full backdrop-blur-sm"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-pastel-lavender/20 rounded-full backdrop-blur-sm"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-emerald-500/20 rounded-full backdrop-blur-sm"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-teal-500/20 rounded-full backdrop-blur-sm"></div>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ const Hero = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronDown 
             size={32} 
-            className="text-pastel-mint cursor-pointer hover:text-pastel-lavender transition-colors duration-300"
+            className="text-emerald-400 cursor-pointer hover:text-teal-400 transition-colors duration-300"
             onClick={scrollToAbout}
           />
         </div>

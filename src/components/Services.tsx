@@ -1,117 +1,109 @@
 
 import React from 'react';
-import { Palette, Monitor, Smartphone, ArrowRight } from 'lucide-react';
+import { Code, Palette, Smartphone, BarChart3, Users, TrendingUp } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: 'UI/UX Design',
-      description: 'Creating intuitive and beautiful user interfaces that prioritize user experience and accessibility.',
-      features: ['User Research & Analysis', 'Wireframing & Prototyping', 'Visual Design & Branding', 'Usability Testing'],
-      color: 'pastel-lavender'
-    },
-    {
-      icon: <Monitor className="w-8 h-8" />,
+      icon: <Code className="w-12 h-12" />,
       title: 'Web Development',
-      description: 'Building responsive and performant web applications using modern technologies and best practices.',
-      features: ['Frontend Development', 'Backend Integration', 'Responsive Design', 'Performance Optimization'],
+      description: 'Building responsive and performant web applications using modern technologies.',
       color: 'pastel-mint'
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: 'Mobile Development',
-      description: 'Developing cross-platform mobile applications with React Native for seamless user experiences.',
-      features: ['Cross-platform Apps', 'Native Performance', 'API Integration', 'App Store Deployment'],
+      icon: <Palette className="w-12 h-12" />,
+      title: '3D Design',
+      description: 'Creating stunning 3D designs and visual experiences for web and mobile.',
+      color: 'pastel-lavender'
+    },
+    {
+      icon: <TrendingUp className="w-12 h-12" />,
+      title: 'Design Trends',
+      description: 'Staying current with the latest design trends and implementing them effectively.',
       color: 'pastel-coral'
+    },
+    {
+      icon: <Users className="w-12 h-12" />,
+      title: 'Customer Support',
+      description: 'Providing excellent customer support and maintaining client relationships.',
+      color: 'pastel-sky'
+    },
+    {
+      icon: <BarChart3 className="w-12 h-12" />,
+      title: 'Branding',
+      description: 'Developing comprehensive brand identities and visual communication systems.',
+      color: 'pastel-peach'
+    },
+    {
+      icon: <Smartphone className="w-12 h-12" />,
+      title: 'Marketing',
+      description: 'Digital marketing strategies to help businesses grow their online presence.',
+      color: 'pastel-rose'
     }
   ];
 
   const getColorClasses = (color: string) => {
-    const colorMap: { [key: string]: { bg: string, text: string, border: string, hover: string } } = {
-      'pastel-lavender': {
-        bg: 'bg-pastel-lavender/10',
-        text: 'text-pastel-lavender',
-        border: 'border-pastel-lavender/30',
-        hover: 'hover:border-pastel-lavender/60'
-      },
-      'pastel-mint': {
-        bg: 'bg-pastel-mint/10',
-        text: 'text-pastel-mint',
-        border: 'border-pastel-mint/30',
-        hover: 'hover:border-pastel-mint/60'
-      },
-      'pastel-coral': {
-        bg: 'bg-pastel-coral/10',
-        text: 'text-pastel-coral',
-        border: 'border-pastel-coral/30',
-        hover: 'hover:border-pastel-coral/60'
-      }
+    const colorMap: { [key: string]: { bg: string, text: string, border: string } } = {
+      'pastel-mint': { bg: 'bg-pastel-mint/10', text: 'text-pastel-mint', border: 'border-pastel-mint/30' },
+      'pastel-lavender': { bg: 'bg-pastel-lavender/10', text: 'text-pastel-lavender', border: 'border-pastel-lavender/30' },
+      'pastel-coral': { bg: 'bg-pastel-coral/10', text: 'text-pastel-coral', border: 'border-pastel-coral/30' },
+      'pastel-sky': { bg: 'bg-pastel-sky/10', text: 'text-pastel-sky', border: 'border-pastel-sky/30' },
+      'pastel-peach': { bg: 'bg-pastel-peach/10', text: 'text-pastel-peach', border: 'border-pastel-peach/30' },
+      'pastel-rose': { bg: 'bg-pastel-rose/10', text: 'text-pastel-rose', border: 'border-pastel-rose/30' }
     };
-    return colorMap[color] || colorMap['pastel-lavender'];
+    return colorMap[color] || colorMap['pastel-mint'];
   };
 
   return (
     <section id="services" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient font-poppins">
-            Services
-          </h2>
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-6xl md:text-8xl font-bold font-poppins mb-4">
+              <span className="text-muted-foreground/20">My </span>
+              <span className="text-foreground">Services</span>
+            </h2>
+          </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const colors = getColorClasses(service.color);
               return (
                 <div 
                   key={index}
-                  className={`card-glow bg-card/50 backdrop-blur-sm p-8 rounded-2xl border ${colors.border} ${colors.hover} transition-all duration-300 hover:scale-105 group`}
+                  className="bg-card/30 backdrop-blur-sm p-8 rounded-xl border border-border/30 hover:border-pastel-mint/50 transition-all duration-300 group text-center"
                 >
                   <div className={`inline-flex p-4 rounded-xl ${colors.bg} ${colors.text} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {service.icon}
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  <h3 className="text-xl font-semibold text-foreground mb-4">
                     {service.title}
                   </h3>
 
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
-
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <div className={`w-2 h-2 rounded-full ${colors.bg}`}></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button className={`flex items-center gap-2 ${colors.text} font-semibold hover:gap-4 transition-all duration-300`}>
-                    Learn More
-                    <ArrowRight size={16} />
-                  </button>
                 </div>
               );
             })}
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-card/30 backdrop-blur-sm p-12 rounded-2xl border border-border/30">
+          <div className="text-center mt-16 bg-card/30 backdrop-blur-sm p-12 rounded-2xl border border-border/30">
             <h3 className="text-3xl font-bold text-foreground mb-6">
-              Need intuitive, beautiful interfaces?
+              Ready to Start a Project?
             </h3>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's work together to create digital experiences that your users will love. 
-              From concept to deployment, I'll help bring your vision to life.
+              Let's work together to create digital experiences that your users will love.
             </p>
             <a 
               href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 btn-gradient text-background font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-pastel-mint text-background font-semibold rounded hover:bg-pastel-mint/90 transition-all duration-300"
             >
               Let's Collaborate
-              <ArrowRight size={20} />
             </a>
           </div>
         </div>

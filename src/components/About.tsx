@@ -25,7 +25,7 @@ const About = () => {
               <div>
                 <h3 className="text-pastel-mint text-lg font-medium mb-4">Who am I?</h3>
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                  I'm Heart Key Ledesma, a visual UX/UI Designer and Web Developer
+                  I'm <span className="text-gradient">Heart Key Ledesma</span>, a visual UX/UI Designer and Web Developer
                 </h2>
               </div>
 

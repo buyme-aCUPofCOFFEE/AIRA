@@ -40,11 +40,11 @@ const Hero = () => {
             {/* Contact Info */}
             <div className="pt-12">
               <div className="text-center lg:text-left">
-                <p className="text-foreground text-lg">
+                <p className="text-foreground text-lg flex flex-wrap items-center justify-center lg:justify-start gap-3">
                   <span>ledesmaheartkey@gmail.com</span>
-                  <span className="text-muted-foreground mx-3">|</span>
+                  <span className="text-muted-foreground">|</span>
                   <span>+63 951 035 0639</span>
-                  <span className="text-muted-foreground mx-3">|</span>
+                  <span className="text-muted-foreground">|</span>
                   <span>Bohol, Philippines</span>
                 </p>
               </div>

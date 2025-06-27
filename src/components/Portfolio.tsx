@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, Github, Smartphone, Globe } from 'lucide-react';
 
@@ -10,7 +11,7 @@ const Portfolio = () => {
       tech: ['React Native', 'Python', 'CNN', 'TensorFlow'],
       category: 'Mobile App',
       icon: <Smartphone className="w-5 h-5" />,
-      color: 'pastel-lavender',
+      color: 'yellow',
       features: [
         '91% Model Accuracy',
         'Real-time Translation',
@@ -25,7 +26,7 @@ const Portfolio = () => {
       tech: ['FastAPI', 'HTML', 'CSS', 'JavaScript', 'SQL'],
       category: 'Web Application',
       icon: <Globe className="w-5 h-5" />,
-      color: 'pastel-mint',
+      color: 'yellow',
       features: [
         'User Role Management',
         'Payment Integration',
@@ -35,44 +36,25 @@ const Portfolio = () => {
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap: { [key: string]: { bg: string, text: string, border: string } } = {
-      'pastel-lavender': {
-        bg: 'bg-pastel-lavender/10',
-        text: 'text-pastel-lavender',
-        border: 'border-pastel-lavender/30'
-      },
-      'pastel-mint': {
-        bg: 'bg-pastel-mint/10',
-        text: 'text-pastel-mint',
-        border: 'border-pastel-mint/30'
-      },
-      'pastel-coral': {
-        bg: 'bg-pastel-coral/10',
-        text: 'text-pastel-coral',
-        border: 'border-pastel-coral/30'
-      }
-    };
-    return colorMap[color] || colorMap['pastel-lavender'];
-  };
-
   return (
-    <section id="portfolio" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="py-20 relative bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-slate-800/40 to-slate-900/60"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient font-poppins">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white font-poppins">
             Portfolio
           </h2>
 
           <div className="grid lg:grid-cols-1 gap-12">
             {projects.map((project, index) => {
-              const colors = getColorClasses(project.color);
               const isEven = index % 2 === 0;
               
               return (
                 <div 
                   key={index}
-                  className={`card-glow bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 overflow-hidden hover:border-pastel-lavender/30 transition-all duration-300 group`}
+                  className="bg-slate-800/60 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-yellow-400/30 transition-all duration-300 group shadow-xl"
                 >
                   <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-cols-2' : ''}`}>
                     {/* Project Image */}
@@ -82,30 +64,37 @@ const Portfolio = () => {
                         alt={project.title}
                         className="w-full h-80 lg:h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
-                      <div className={`absolute top-4 left-4 flex items-center gap-2 px-3 py-1 rounded-full ${colors.bg} ${colors.text} text-sm font-medium`}>
-                        {project.icon}
-                        {project.category}
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-emerald-900/20 to-transparent"></div>
+                      
+                      {/* Category Badge with Yellow Accent */}
+                      <div className="absolute top-6 left-6">
+                        <div className="bg-yellow-400 text-slate-900 px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2 shadow-lg">
+                          {project.icon}
+                          {project.category}
+                        </div>
                       </div>
+
+                      {/* Decorative Yellow Corner */}
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-400/20 rounded-bl-3xl"></div>
                     </div>
 
                     {/* Project Details */}
-                    <div className={`p-8 lg:p-12 flex flex-col justify-center ${!isEven ? 'lg:order-1' : ''}`}>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 group-hover:text-pastel-lavender transition-colors duration-300">
+                    <div className={`p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-slate-800/80 to-slate-700/60 ${!isEven ? 'lg:order-1' : ''}`}>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
                         {project.title}
                       </h3>
 
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                      <p className="text-slate-300 mb-6 leading-relaxed">
                         {project.description}
                       </p>
 
-                      {/* Key Features */}
+                      {/* Key Features with Yellow Accents */}
                       <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-pastel-mint mb-3">Key Features:</h4>
+                        <h4 className="text-sm font-semibold text-yellow-400 mb-3 uppercase tracking-wide">Key Features:</h4>
                         <div className="grid grid-cols-2 gap-2">
                           {project.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <div className={`w-1.5 h-1.5 rounded-full ${colors.bg}`}></div>
+                            <div key={featureIndex} className="flex items-center gap-2 text-sm text-slate-300">
+                              <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
                               {feature}
                             </div>
                           ))}
@@ -114,12 +103,12 @@ const Portfolio = () => {
 
                       {/* Tech Stack */}
                       <div className="mb-8">
-                        <h4 className="text-sm font-semibold text-pastel-coral mb-3">Technologies:</h4>
+                        <h4 className="text-sm font-semibold text-yellow-400 mb-3 uppercase tracking-wide">Technologies:</h4>
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((tech, techIndex) => (
                             <span 
                               key={techIndex}
-                              className="px-3 py-1 bg-card border border-border/50 rounded-full text-xs font-medium text-muted-foreground hover:border-pastel-lavender/50 transition-colors duration-300"
+                              className="px-3 py-1 bg-slate-700/80 border border-slate-600 rounded-full text-xs font-medium text-slate-300 hover:border-yellow-400/50 hover:text-yellow-400 transition-colors duration-300"
                             >
                               {tech}
                             </span>
@@ -129,11 +118,11 @@ const Portfolio = () => {
 
                       {/* Action Buttons */}
                       <div className="flex gap-4">
-                        <button className="flex items-center gap-2 px-6 py-3 btn-gradient text-background font-semibold rounded-full hover:scale-105 transition-all duration-300">
+                        <button className="flex items-center gap-2 px-6 py-3 bg-yellow-400 text-slate-900 font-bold rounded-full hover:bg-yellow-300 hover:scale-105 transition-all duration-300 shadow-lg">
                           <ExternalLink size={16} />
                           View Project
                         </button>
-                        <button className="flex items-center gap-2 px-6 py-3 border-2 border-pastel-lavender text-pastel-lavender font-semibold rounded-full hover:bg-pastel-lavender hover:text-background transition-all duration-300">
+                        <button className="flex items-center gap-2 px-6 py-3 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-full hover:bg-yellow-400 hover:text-slate-900 transition-all duration-300">
                           <Github size={16} />
                           View Code
                         </button>
@@ -147,14 +136,14 @@ const Portfolio = () => {
 
           {/* View More Projects */}
           <div className="text-center mt-16">
-            <p className="text-muted-foreground mb-6">
+            <p className="text-slate-400 mb-6">
               Interested in seeing more of my work?
             </p>
             <a 
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 border-2 border-pastel-mint text-pastel-mint font-semibold rounded-full hover:bg-pastel-mint hover:text-background transition-all duration-300"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-bold rounded-full hover:from-yellow-300 hover:to-yellow-400 hover:scale-105 transition-all duration-300 shadow-lg"
             >
               <Github size={20} />
               View All Projects on GitHub
@@ -162,6 +151,10 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
     </section>
   );
 };

@@ -37,13 +37,15 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 relative bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-slate-800/40 to-slate-900/60"></div>
+    <section id="portfolio" className="py-20 relative min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-emerald-900">
+      {/* Background Pattern Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 via-emerald-800/60 to-green-700/70"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(251,191,36,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(34,197,94,0.1),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white font-poppins">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white font-poppins drop-shadow-lg">
             Portfolio
           </h2>
 
@@ -54,7 +56,10 @@ const Portfolio = () => {
               return (
                 <div 
                   key={index}
-                  className="bg-slate-800/60 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-yellow-400/30 transition-all duration-300 group shadow-xl"
+                  className="bg-gradient-to-br from-yellow-400/20 via-yellow-300/10 to-green-400/20 backdrop-blur-sm rounded-3xl border-2 border-yellow-400/40 overflow-hidden hover:border-yellow-300/60 transition-all duration-300 group shadow-2xl hover:shadow-yellow-400/20"
+                  style={{
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(251,191,36,0.1)'
+                  }}
                 >
                   <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-cols-2' : ''}`}>
                     {/* Project Image */}
@@ -64,51 +69,52 @@ const Portfolio = () => {
                         alt={project.title}
                         className="w-full h-80 lg:h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-emerald-900/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-900/40 via-yellow-900/20 to-emerald-900/30"></div>
                       
-                      {/* Category Badge with Yellow Accent */}
+                      {/* Category Badge with Enhanced Yellow Styling */}
                       <div className="absolute top-6 left-6">
-                        <div className="bg-yellow-400 text-slate-900 px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2 shadow-lg">
+                        <div className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-green-900 px-6 py-3 rounded-2xl font-bold text-sm flex items-center gap-2 shadow-2xl border-2 border-yellow-200">
                           {project.icon}
                           {project.category}
                         </div>
                       </div>
 
-                      {/* Decorative Yellow Corner */}
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-400/20 rounded-bl-3xl"></div>
+                      {/* Enhanced Decorative Elements */}
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-yellow-400/40 to-transparent rounded-bl-3xl"></div>
+                      <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-green-400/40 to-transparent rounded-tr-3xl"></div>
                     </div>
 
-                    {/* Project Details */}
-                    <div className={`p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-slate-800/80 to-slate-700/60 ${!isEven ? 'lg:order-1' : ''}`}>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
+                    {/* Project Details with Enhanced Styling */}
+                    <div className={`p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-green-800/60 via-emerald-700/50 to-green-900/60 backdrop-blur-sm ${!isEven ? 'lg:order-1' : ''}`}>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-yellow-300 transition-colors duration-300 drop-shadow-lg">
                         {project.title}
                       </h3>
 
-                      <p className="text-slate-300 mb-6 leading-relaxed">
+                      <p className="text-green-100 mb-6 leading-relaxed drop-shadow-sm">
                         {project.description}
                       </p>
 
-                      {/* Key Features with Yellow Accents */}
+                      {/* Key Features with Enhanced Yellow Accents */}
                       <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-yellow-400 mb-3 uppercase tracking-wide">Key Features:</h4>
+                        <h4 className="text-sm font-semibold text-yellow-300 mb-3 uppercase tracking-wide drop-shadow-sm">Key Features:</h4>
                         <div className="grid grid-cols-2 gap-2">
                           {project.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-center gap-2 text-sm text-slate-300">
-                              <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                            <div key={featureIndex} className="flex items-center gap-2 text-sm text-green-100">
+                              <div className="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-300 shadow-lg"></div>
                               {feature}
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      {/* Tech Stack */}
+                      {/* Tech Stack with Enhanced Styling */}
                       <div className="mb-8">
-                        <h4 className="text-sm font-semibold text-yellow-400 mb-3 uppercase tracking-wide">Technologies:</h4>
+                        <h4 className="text-sm font-semibold text-yellow-300 mb-3 uppercase tracking-wide drop-shadow-sm">Technologies:</h4>
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((tech, techIndex) => (
                             <span 
                               key={techIndex}
-                              className="px-3 py-1 bg-slate-700/80 border border-slate-600 rounded-full text-xs font-medium text-slate-300 hover:border-yellow-400/50 hover:text-yellow-400 transition-colors duration-300"
+                              className="px-4 py-2 bg-gradient-to-r from-green-700/80 to-emerald-700/80 border-2 border-yellow-400/30 rounded-full text-xs font-medium text-green-100 hover:border-yellow-300/60 hover:text-yellow-200 transition-all duration-300 shadow-lg"
                             >
                               {tech}
                             </span>
@@ -116,13 +122,13 @@ const Portfolio = () => {
                         </div>
                       </div>
 
-                      {/* Action Buttons */}
+                      {/* Enhanced Action Buttons */}
                       <div className="flex gap-4">
-                        <button className="flex items-center gap-2 px-6 py-3 bg-yellow-400 text-slate-900 font-bold rounded-full hover:bg-yellow-300 hover:scale-105 transition-all duration-300 shadow-lg">
+                        <button className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-300 text-green-900 font-bold rounded-2xl hover:from-yellow-300 hover:to-yellow-200 hover:scale-105 transition-all duration-300 shadow-2xl border-2 border-yellow-200">
                           <ExternalLink size={16} />
                           View Project
                         </button>
-                        <button className="flex items-center gap-2 px-6 py-3 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-full hover:bg-yellow-400 hover:text-slate-900 transition-all duration-300">
+                        <button className="flex items-center gap-2 px-8 py-4 border-2 border-yellow-400 bg-gradient-to-r from-green-800/50 to-emerald-800/50 text-yellow-300 font-semibold rounded-2xl hover:bg-gradient-to-r hover:from-yellow-400/20 hover:to-yellow-300/20 hover:text-yellow-200 transition-all duration-300 shadow-xl backdrop-blur-sm">
                           <Github size={16} />
                           View Code
                         </button>
@@ -134,16 +140,16 @@ const Portfolio = () => {
             })}
           </div>
 
-          {/* View More Projects */}
+          {/* Enhanced View More Projects Section */}
           <div className="text-center mt-16">
-            <p className="text-slate-400 mb-6">
+            <p className="text-green-200 mb-6 text-lg drop-shadow-sm">
               Interested in seeing more of my work?
             </p>
             <a 
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-bold rounded-full hover:from-yellow-300 hover:to-yellow-400 hover:scale-105 transition-all duration-300 shadow-lg"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-300 text-green-900 font-bold rounded-2xl hover:from-yellow-300 hover:to-yellow-200 hover:scale-105 transition-all duration-300 shadow-2xl border-2 border-yellow-200"
             >
               <Github size={20} />
               View All Projects on GitHub
@@ -152,9 +158,11 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      {/* Enhanced Decorative Elements */}
+      <div className="absolute top-20 left-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-48 h-48 bg-green-400/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-yellow-300/10 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-36 h-36 bg-emerald-400/15 rounded-full blur-2xl"></div>
     </section>
   );
 };

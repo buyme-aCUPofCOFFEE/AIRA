@@ -22,7 +22,7 @@ const Hero = () => {
             <div className="space-y-6">
               <p className="text-emerald-400 text-lg font-medium">Hi There!</p>
               <h1 className="text-6xl md:text-8xl font-bold font-poppins">
-                <span className="block text-foreground">I am</span>
+                <span className="block text-foreground">I am a</span>
                 <span className="block text-gradient">Developer</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-lg">
@@ -38,18 +38,15 @@ const Hero = () => {
             </button>
 
             {/* Contact Info */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
-              <div>
-                <h4 className="text-sm text-muted-foreground mb-2">Email</h4>
-                <p className="text-foreground">ledesmaheartkey@gmail.com</p>
-              </div>
-              <div>
-                <h4 className="text-sm text-muted-foreground mb-2">Phone</h4>
-                <p className="text-foreground">+63 951 035 0639</p>
-              </div>
-              <div>
-                <h4 className="text-sm text-muted-foreground mb-2">Location</h4>
-                <p className="text-foreground">Bohol, Philippines</p>
+            <div className="pt-12">
+              <div className="text-center lg:text-left">
+                <p className="text-foreground text-lg">
+                  <span>ledesmaheartkey@gmail.com</span>
+                  <span className="text-muted-foreground mx-3">|</span>
+                  <span>+63 951 035 0639</span>
+                  <span className="text-muted-foreground mx-3">|</span>
+                  <span>Bohol, Philippines</span>
+                </p>
               </div>
             </div>
           </div>

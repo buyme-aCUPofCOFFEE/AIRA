@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Code, Database, Palette, Users, Clock, MessageSquare, Brain, Zap } from 'lucide-react';
 
@@ -29,7 +28,7 @@ const Skills = () => {
       title: 'Tools & Technologies',
       icon: <Zap className="w-6 h-6" />,
       color: 'pastel-coral',
-      skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Microsoft Office Suite']
+      skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Microsoft Office Suite', 'Canva', 'Photoshop', 'Figma']
     },
     {
       title: 'Soft Skills',

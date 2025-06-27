@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { ExternalLink, Github, Smartphone, Globe, Brain } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Globe } from 'lucide-react';
 
 const Portfolio = () => {
   const projects = [
@@ -32,21 +31,6 @@ const Portfolio = () => {
         'Payment Integration',
         'Workflow Automation',
         'Peer Review System'
-      ]
-    },
-    {
-      title: 'Machine Learning Projects',
-      description: 'Collection of AI/ML projects exploring various algorithms and applications in real-world scenarios, focusing on practical implementations and performance optimization.',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&h=600',
-      tech: ['Python', 'TensorFlow', 'Scikit-learn', 'Pandas'],
-      category: 'AI/ML',
-      icon: <Brain className="w-5 h-5" />,
-      color: 'pastel-coral',
-      features: [
-        'Algorithm Implementation',
-        'Data Visualization',
-        'Performance Optimization',
-        'Real-world Applications'
       ]
     }
   ];
